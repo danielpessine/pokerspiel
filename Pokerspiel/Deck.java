@@ -9,20 +9,20 @@ public class Deck
 	public final int HAND_GROESSE = 2;
 	public final int FLOP_GROESSE = 3;
 	
-	Card[] deck = new Card[DECK_GROESSE];
+	Karte[] deck = new Karte[DECK_GROESSE];
 	Random random = new Random();
 	
-	// Deck füllen
+	// Deck fÃ¼llen
 	public void fuellen()
 	{
 		int c = 0;
-		for (int suit = 1; suit <= 4; suit++)
+		for (int farbe = 1; farbe <= 4; farbe++)
 		{
-			for (int rank = 1; rank <= 13; rank++)
+			for (int rang = 1; rang <= 13; rang++)
 			{
-				deck[c] = new Card();
-				deck[c].suit = suit;
-				deck[c].rank = rank;
+				deck[c] = new Karte();
+				deck[c].farbe = farbe;
+				deck[c].rang = rang;
 				c++;
 			}
 		}
@@ -33,18 +33,18 @@ public class Deck
 	{
 		for (int x = 0; x <= MISCHEN_STUFEN; x++)
 		{
-			int number1 = random.nextInt(DECK_GROESSE);
-			int number2 = random.nextInt(DECK_GROESSE);
-			Card temp = deck[number1];
-			deck[number1] = deck[number2];
-			deck[number2] = temp;
+			int versch1 = random.nextInt(DECK_GROESSE);
+			int versch2 = random.nextInt(DECK_GROESSE);
+			Karte temp = deck[versch1];
+			deck[versch1] = deck[versch2];
+			deck[versch2] = temp;
 		}
 	}
 	
 	// Karten dealen 
-	public Card[] deal()
+	public Karte[] deal()
 	{
-		Card[] hand = new Card[HAND_GROESSE];
+		Karte[] hand = new Karte[HAND_GROESSE];
 		for (int deckPosition = 0; deckPosition < 2; deckPosition++)
 		{
 			hand[deckPosition] = deck[deckPosition];
@@ -53,9 +53,9 @@ public class Deck
 	}
 	
 	// Flop auslegen
-	public Card[] flop()
+	public Karte[] flop()
 	{
-		Card[] flop = new Card[FLOP_GROESSE];
+		Karte[] flop = new Karte[FLOP_GROESSE];
 		for (int deckPosition = 0; deckPosition < 3; deckPosition++)
 		{
 			flop[deckPosition] = deck[deckPosition];
