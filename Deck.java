@@ -34,7 +34,7 @@ public class Deck{
     }
 
     // Test für uns, Deck wird ausgegeben
-    public void printDeck(){
+    public void deckAusgeben(){
         for(int i=0; i<deck.length;i++){
             System.out.print(i+1 + ": " + deck[i].karteAusgeben());
         }
