@@ -5,21 +5,20 @@ import java.io.InputStreamReader;   //Einlesen von Daten
 public class Pokerspiel {
 
     public static int getAnzahlSpieler() {
-        int intPlayers = 0;
-        String userInput = "";
+        int anzSpieler = 0;
+        String BenutzerInput = "";
 
         // Abfrage Der Anzahl der Spieler in Konsole
         System.out.println("Eyy, wie viele Spieler?");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        if ((intPlayers<2) || (intPlayers>9)){
+        if ((anzSpieler<2) || (anzSpieler>9)){
             //Hier könnte Ihre Exception stehen
         }
-        return intPlayers;
+        return anzSpieler;
     }
 
     public static void main(String[] args) {
-        // variables
         Deck holdemDeck = new Deck();   // Neues Deck wird erstellt
         int spielerzahl = 0;
         int kartenIterator = 0;
@@ -35,8 +34,6 @@ public class Pokerspiel {
         for(int i=0;i<100;i++){
             holdemDeck.mischen();
         }
-
-        /* holdemDeck.cutDeck(); */
 
         // Objekte der Klasse Spieler werden nach Abfrage der Spielerzahl erzeugt -siehe Initialisierung
         for (int i=0;i<spielerzahl;i++){
