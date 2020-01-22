@@ -23,7 +23,7 @@ public class Karte{
         return rang;
     }
 
-    // Ein if als verlagerter Flex
+    // Brauchen wir später unbedingt bei Evaluation
     class RangVergleich implements Comparator<Karte>{
         public int compare(Karte karte1, Karte karte2) throws ClassCastException{   //ClassCastException ist Fehlerausgabe, wenn zwei nicht vergleichbare datentypen verglichen werden -weil ich es kann
             // Zum zweiten Mal Kontrolle für uns dpc´s
